@@ -108,12 +108,12 @@ document.addEventListener("keydown", function (e) {
     }
     if (e.code == 'ArrowUp') {
 
-        positionY++
+        positionY--
         console.log(positionX, positionY)
     }
     if (e.code == 'ArrowDown') {
 
-        positionY--
+        positionY++
         console.log(positionX, positionY)
     }
 
