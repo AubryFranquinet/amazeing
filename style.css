@@ -1,0 +1,35 @@
+body {
+    background-color: burlywood;
+}
+
+.row {
+    display: flex;
+}
+
+.wall {
+    background-color: rgb(54, 43, 43);
+    width: 50px;
+    height: 50px;
+    border: white solid 1px;
+}
+
+.path {
+    background-color: rgb(88, 138, 88);
+    width: 50px;
+    height: 50px;
+    border: white solid 1px;
+}
+
+.start {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border: white solid 1px;
+}
+
+.treasure {
+    background-color: gold;
+    width: 50px;
+    height: 50px;
+    border: white solid 1px;
+}
