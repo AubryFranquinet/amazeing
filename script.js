@@ -96,7 +96,7 @@ document.addEventListener("keydown", function (e) {
 
 
         positionX++
-      
+        tiles[positionY * 13 + (positionX - 1)].classList.remove('start')
         
 
         
@@ -105,21 +105,21 @@ document.addEventListener("keydown", function (e) {
     if (e.code == 'ArrowLeft') {
 
         positionX--
-        
+        tiles[positionY * 13 + (positionX + 1)].classList.remove('start')
         
 
     }
     if (e.code == 'ArrowUp') {
 
         positionY--
-        
+        tiles[(positionY + 1) * 13 + positionX].classList.remove('start')
         
 
     }
     if (e.code == 'ArrowDown') {
 
         positionY++
-        
+        tiles[(positionY - 1) * 13 + positionX].classList.remove('start')
         
 
     }
