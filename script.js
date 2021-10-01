@@ -44,8 +44,8 @@ let main = document.querySelector('main')
 main.appendChild(Maindiv)
 
 
-let positionX = 0
-let positionY = 0
+let positionX = 1
+let positionY = 1
 
 let i = positionX
 let j = positionY
@@ -59,34 +59,34 @@ for (const row of LEVEL_1) {
     for (const elem of row) {
         if (elem == '*') {
             let wall = document.createElement('div')
-            wall.setAttribute('class', 'wall')
+            wall.setAttribute('class', 'wall tile')
             rowElement.appendChild(wall)
         }
         else if (elem == '.') {
             let path = document.createElement('div')
-            path.setAttribute('class', 'path')
+            path.setAttribute('class', 'path tile')
             rowElement.appendChild(path)
         }
         else if (elem == 'S') {
             let start = document.createElement('div')
-            start.setAttribute('class', 'start')
+            start.setAttribute('class', 'start tile')
             rowElement.appendChild(start)
         }
         else if (elem == 'S') {
             let start = document.createElement('div')
-            start.setAttribute('class', 'start')
+            start.setAttribute('class', 'start tile')
             rowElement.appendChild(start)
         }
         else if (elem == 'T') {
             let treasure = document.createElement('div')
-            treasure.setAttribute('class', 'treasure')
+            treasure.setAttribute('class', 'treasure tile')
             rowElement.appendChild(treasure)
         }
         j++
     }
 }
 
-console.log(i + ' ' + j)
+const tiles = document.querySelectorAll('.tile')
 
 // Add event listener on keypress
 document.addEventListener("keydown", function (e) {
@@ -96,28 +96,36 @@ document.addEventListener("keydown", function (e) {
 
 
         positionX++
-        console.log(positionX,positionY)
+      
+        
 
-
+        
 
     }
     if (e.code == 'ArrowLeft') {
 
         positionX--
-        console.log(positionX, positionY)
+        
+        
+
     }
     if (e.code == 'ArrowUp') {
 
         positionY--
-        console.log(positionX, positionY)
+        
+        
+
     }
     if (e.code == 'ArrowDown') {
 
         positionY++
-        console.log(positionX, positionY)
+        
+        
+
     }
-
-
+    
+    
+    tiles[positionY * 13 + positionX].classList.add('start')
 });
 
 
