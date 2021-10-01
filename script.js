@@ -69,7 +69,7 @@ for (const row of LEVEL_1) {
         }
         else if (elem == 'S') {
             let start = document.createElement('div')
-            start.setAttribute('class', 'start tile')
+            start.setAttribute('class', 'start joueur tile')
             rowElement.appendChild(start)
         }
         else if (elem == 'S') {
@@ -91,40 +91,40 @@ const tiles = document.querySelectorAll('.tile')
 // Add event listener on keypress
 document.addEventListener("keydown", function (e) {
 
+    tiles[positionY * 13 + positionX].classList.remove('start')
     //Move right
-    if (e.code == 'ArrowRight') {
+
+    //NE FONCTIONNE PAS (ENCORE)
+    // newPos = tiles[positionY * 13 + positionX];
+    //if (newPos != document.querySelectorAll('.wall')) {
 
 
-        positionX++
-        tiles[positionY * 13 + (positionX - 1)].classList.remove('start')
-        
+        if (e.code == 'ArrowRight') {
 
-        
+            positionX++
 
+        }
+        if (e.code == 'ArrowLeft') {
+
+            positionX--
+
+        }
+        if (e.code == 'ArrowUp') {
+
+            positionY--
+
+        }
+        if (e.code == 'ArrowDown') {
+
+            positionY++
+
+        }
+    ///}
+    else {
+        tiles[1][1]
+        console.log('NON')
     }
-    if (e.code == 'ArrowLeft') {
 
-        positionX--
-        tiles[positionY * 13 + (positionX + 1)].classList.remove('start')
-        
-
-    }
-    if (e.code == 'ArrowUp') {
-
-        positionY--
-        tiles[(positionY + 1) * 13 + positionX].classList.remove('start')
-        
-
-    }
-    if (e.code == 'ArrowDown') {
-
-        positionY++
-        tiles[(positionY - 1) * 13 + positionX].classList.remove('start')
-        
-
-    }
-    
-    
     tiles[positionY * 13 + positionX].classList.add('start')
 });
 
