@@ -3,6 +3,7 @@ let positionX = 1
 let positionY = 1
 let i = 1
 let j = 1
+const moveThing = move();
 
 //Array containing every maze element displayed in "displayMaze()"
 const LEVEL_1 = [
@@ -21,8 +22,6 @@ const LEVEL_1 = [
 ]
 //Create the main div and display every element of the array
 function displayMaze() {
-
-
     let Maindiv = document.createElement('div')
     Maindiv.setAttribute('class', 'parent')
     let main = document.querySelector('main')
@@ -32,7 +31,6 @@ function displayMaze() {
         let rowElement = document.createElement('div')
         rowElement.setAttribute('class', 'row')
         Maindiv.appendChild(rowElement)
-        //i++
         for (const elem of row) {
             if (elem == '*') {
                 let wall = document.createElement('div')
@@ -59,11 +57,11 @@ function displayMaze() {
                 treasure.setAttribute('class', 'treasure tile')
                 rowElement.appendChild(treasure)
             }
-            // j++
         }
     }
 
 }
+//call the function displayMaze()
 displayMaze()
 
 // Add event listener on keypress to make the player move
@@ -87,4 +85,6 @@ function move() {
         tiles[positionY * 13 + positionX].classList.add('start')
     });
 }
-move()
+//Call the function move()
+
+moveThing
