@@ -38,6 +38,8 @@ const LEVEL_3 = [
     ["*", "*", "*", "*", "*", "*", "*", "*"]
 ]
 
+//Create the main div
+
 let Maindiv = document.createElement('div')
 Maindiv.setAttribute('class', 'parent')
 let main = document.querySelector('main')
@@ -94,37 +96,39 @@ document.addEventListener("keydown", function (e) {
     //Move right
     if (e.code == 'ArrowRight') {
 
-
-        positionX++
-        tiles[positionY * 13 + (positionX - 1)].classList.remove('start')
         
 
+            positionX++
+            tiles[positionY * 13 + (positionX - 1)].classList.remove('start')
+            console.log('OUI')
         
+        
+
 
     }
     if (e.code == 'ArrowLeft') {
 
         positionX--
         tiles[positionY * 13 + (positionX + 1)].classList.remove('start')
-        
+
 
     }
     if (e.code == 'ArrowUp') {
 
         positionY--
         tiles[(positionY + 1) * 13 + positionX].classList.remove('start')
-        
+
 
     }
     if (e.code == 'ArrowDown') {
 
         positionY++
         tiles[(positionY - 1) * 13 + positionX].classList.remove('start')
-        
+
 
     }
-    
-    
+
+
     tiles[positionY * 13 + positionX].classList.add('start')
 });
 
